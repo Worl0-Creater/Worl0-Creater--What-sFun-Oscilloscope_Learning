@@ -1,0 +1,317 @@
+//Copyright (C)2014-2025 Gowin Semiconductor Corporation.
+//All rights reserved.
+//File Title: Post-PnR Verilog Simulation Model file
+//Tool Version: V1.9.11.02 (64-bit)
+//Created Time: Wed May 28 15:11:50 2025
+
+`timescale 100 ps/100 ps
+module Adder_Subtractor_Top(
+	data_a,
+	data_b,
+	result
+);
+input [11:0] data_a;
+input [11:0] data_b;
+output [12:0] result;
+wire GND;
+wire VCC;
+wire [11:0] data_a;
+wire [11:0] data_b;
+wire [12:0] result;
+wire \adder_subtractor_inst/result_d_2_3 ;
+wire \adder_subtractor_inst/result_d_3_3 ;
+wire \adder_subtractor_inst/result_d_5_3 ;
+wire \adder_subtractor_inst/result_d_5_4 ;
+wire \adder_subtractor_inst/result_d_5_5 ;
+wire \adder_subtractor_inst/result_d_7_3 ;
+wire \adder_subtractor_inst/result_d_7_4 ;
+wire \adder_subtractor_inst/result_d_7_6 ;
+wire \adder_subtractor_inst/result_d_9_3 ;
+wire \adder_subtractor_inst/full_adder[4].u_full_adder/result_d_4_3 ;
+wire \adder_subtractor_inst/full_adder[6].u_full_adder/result_d_6_3 ;
+wire \adder_subtractor_inst/full_adder[7].u_full_adder/result_d_7_5 ;
+wire \adder_subtractor_inst/full_adder[8].u_full_adder/result_d_8_3 ;
+wire \adder_subtractor_inst/full_adder[9].u_full_adder/result_d_9_4 ;
+wire \adder_subtractor_inst/full_adder[9].u_full_adder/result_d_9_5 ;
+wire \adder_subtractor_inst/full_adder[9].u_full_adder/result_d_9_6 ;
+wire \adder_subtractor_inst/full_adder[9].u_full_adder/result_d_9_7 ;
+wire \adder_subtractor_inst/full_adder[10].u_full_adder/result_d_10_3 ;
+wire \adder_subtractor_inst/full_adder[11].u_full_adder/result_d_11_3 ;
+wire \adder_subtractor_inst/full_adder[11].u_full_adder/result_d_11_4 ;
+wire \adder_subtractor_inst/full_adder[11].u_full_adder/result_d_11_5 ;
+wire \adder_subtractor_inst/full_adder[11].u_full_adder/result_d_12_3 ;
+wire \adder_subtractor_inst/full_adder[11].u_full_adder/result_d_12_4 ;
+VCC VCC_cZ (
+  .V(VCC)
+);
+GND GND_cZ (
+  .G(GND)
+);
+GSR GSR (
+	.GSRI(VCC)
+);
+LUT2 \adder_subtractor_inst/full_adder[0].u_full_adder/n4_s0  (
+	.I0(data_a[0]),
+	.I1(data_b[0]),
+	.F(result[0])
+);
+defparam \adder_subtractor_inst/full_adder[0].u_full_adder/n4_s0 .INIT=4'h6;
+LUT4 \adder_subtractor_inst/full_adder[1].u_full_adder/result_d_1_s  (
+	.I0(data_a[0]),
+	.I1(data_b[0]),
+	.I2(data_a[1]),
+	.I3(data_b[1]),
+	.F(result[1])
+);
+defparam \adder_subtractor_inst/full_adder[1].u_full_adder/result_d_1_s .INIT=16'h8778;
+LUT3 \adder_subtractor_inst/full_adder[2].u_full_adder/result_d_2_s  (
+	.I0(\adder_subtractor_inst/result_d_2_3 ),
+	.I1(data_a[2]),
+	.I2(data_b[2]),
+	.F(result[2])
+);
+defparam \adder_subtractor_inst/full_adder[2].u_full_adder/result_d_2_s .INIT=8'h69;
+LUT4 \adder_subtractor_inst/full_adder[2].u_full_adder/result_d_2_s0  (
+	.I0(data_a[1]),
+	.I1(data_b[1]),
+	.I2(data_a[0]),
+	.I3(data_b[0]),
+	.F(\adder_subtractor_inst/result_d_2_3 )
+);
+defparam \adder_subtractor_inst/full_adder[2].u_full_adder/result_d_2_s0 .INIT=16'h1777;
+LUT3 \adder_subtractor_inst/full_adder[3].u_full_adder/result_d_3_s  (
+	.I0(\adder_subtractor_inst/result_d_3_3 ),
+	.I1(data_a[3]),
+	.I2(data_b[3]),
+	.F(result[3])
+);
+defparam \adder_subtractor_inst/full_adder[3].u_full_adder/result_d_3_s .INIT=8'h69;
+LUT3 \adder_subtractor_inst/full_adder[3].u_full_adder/result_d_3_s0  (
+	.I0(\adder_subtractor_inst/result_d_2_3 ),
+	.I1(data_a[2]),
+	.I2(data_b[2]),
+	.F(\adder_subtractor_inst/result_d_3_3 )
+);
+defparam \adder_subtractor_inst/full_adder[3].u_full_adder/result_d_3_s0 .INIT=8'h2B;
+LUT3 \adder_subtractor_inst/full_adder[4].u_full_adder/result_d_4_s  (
+	.I0(\adder_subtractor_inst/full_adder[4].u_full_adder/result_d_4_3 ),
+	.I1(data_a[4]),
+	.I2(data_b[4]),
+	.F(result[4])
+);
+defparam \adder_subtractor_inst/full_adder[4].u_full_adder/result_d_4_s .INIT=8'h69;
+LUT3 \adder_subtractor_inst/full_adder[4].u_full_adder/result_d_4_s0  (
+	.I0(\adder_subtractor_inst/result_d_3_3 ),
+	.I1(data_a[3]),
+	.I2(data_b[3]),
+	.F(\adder_subtractor_inst/full_adder[4].u_full_adder/result_d_4_3 )
+);
+defparam \adder_subtractor_inst/full_adder[4].u_full_adder/result_d_4_s0 .INIT=8'h2B;
+LUT3 \adder_subtractor_inst/full_adder[5].u_full_adder/result_d_5_s  (
+	.I0(\adder_subtractor_inst/result_d_5_3 ),
+	.I1(data_a[5]),
+	.I2(data_b[5]),
+	.F(result[5])
+);
+defparam \adder_subtractor_inst/full_adder[5].u_full_adder/result_d_5_s .INIT=8'h69;
+LUT3 \adder_subtractor_inst/full_adder[5].u_full_adder/result_d_5_s0  (
+	.I0(\adder_subtractor_inst/result_d_5_4 ),
+	.I1(\adder_subtractor_inst/result_d_3_3 ),
+	.I2(\adder_subtractor_inst/result_d_5_5 ),
+	.F(\adder_subtractor_inst/result_d_5_3 )
+);
+defparam \adder_subtractor_inst/full_adder[5].u_full_adder/result_d_5_s0 .INIT=8'hD0;
+LUT4 \adder_subtractor_inst/full_adder[5].u_full_adder/result_d_5_s1  (
+	.I0(data_a[4]),
+	.I1(data_b[4]),
+	.I2(data_a[3]),
+	.I3(data_b[3]),
+	.F(\adder_subtractor_inst/result_d_5_4 )
+);
+defparam \adder_subtractor_inst/full_adder[5].u_full_adder/result_d_5_s1 .INIT=16'hEEE0;
+LUT4 \adder_subtractor_inst/full_adder[5].u_full_adder/result_d_5_s2  (
+	.I0(data_a[4]),
+	.I1(data_b[4]),
+	.I2(data_a[3]),
+	.I3(data_b[3]),
+	.F(\adder_subtractor_inst/result_d_5_5 )
+);
+defparam \adder_subtractor_inst/full_adder[5].u_full_adder/result_d_5_s2 .INIT=16'h1777;
+LUT4 \adder_subtractor_inst/full_adder[6].u_full_adder/result_d_6_s  (
+	.I0(\adder_subtractor_inst/result_d_5_3 ),
+	.I1(data_a[5]),
+	.I2(data_b[5]),
+	.I3(\adder_subtractor_inst/full_adder[6].u_full_adder/result_d_6_3 ),
+	.F(result[6])
+);
+defparam \adder_subtractor_inst/full_adder[6].u_full_adder/result_d_6_s .INIT=16'hD42B;
+LUT2 \adder_subtractor_inst/full_adder[6].u_full_adder/result_d_6_s0  (
+	.I0(data_a[6]),
+	.I1(data_b[6]),
+	.F(\adder_subtractor_inst/full_adder[6].u_full_adder/result_d_6_3 )
+);
+defparam \adder_subtractor_inst/full_adder[6].u_full_adder/result_d_6_s0 .INIT=4'h9;
+LUT3 \adder_subtractor_inst/full_adder[7].u_full_adder/result_d_7_s  (
+	.I0(\adder_subtractor_inst/result_d_7_3 ),
+	.I1(data_a[7]),
+	.I2(data_b[7]),
+	.F(result[7])
+);
+defparam \adder_subtractor_inst/full_adder[7].u_full_adder/result_d_7_s .INIT=8'h69;
+LUT4 \adder_subtractor_inst/full_adder[7].u_full_adder/result_d_7_s0  (
+	.I0(\adder_subtractor_inst/result_d_3_3 ),
+	.I1(\adder_subtractor_inst/result_d_5_4 ),
+	.I2(\adder_subtractor_inst/result_d_7_4 ),
+	.I3(\adder_subtractor_inst/full_adder[7].u_full_adder/result_d_7_5 ),
+	.F(\adder_subtractor_inst/result_d_7_3 )
+);
+defparam \adder_subtractor_inst/full_adder[7].u_full_adder/result_d_7_s0 .INIT=16'hBF00;
+LUT4 \adder_subtractor_inst/full_adder[7].u_full_adder/result_d_7_s1  (
+	.I0(data_a[6]),
+	.I1(data_b[6]),
+	.I2(data_a[5]),
+	.I3(data_b[5]),
+	.F(\adder_subtractor_inst/result_d_7_4 )
+);
+defparam \adder_subtractor_inst/full_adder[7].u_full_adder/result_d_7_s1 .INIT=16'hEEE0;
+LUT3 \adder_subtractor_inst/full_adder[7].u_full_adder/result_d_7_s2  (
+	.I0(\adder_subtractor_inst/result_d_7_4 ),
+	.I1(\adder_subtractor_inst/result_d_5_5 ),
+	.I2(\adder_subtractor_inst/result_d_7_6 ),
+	.F(\adder_subtractor_inst/full_adder[7].u_full_adder/result_d_7_5 )
+);
+defparam \adder_subtractor_inst/full_adder[7].u_full_adder/result_d_7_s2 .INIT=8'hD0;
+LUT4 \adder_subtractor_inst/full_adder[7].u_full_adder/result_d_7_s3  (
+	.I0(data_a[6]),
+	.I1(data_b[6]),
+	.I2(data_a[5]),
+	.I3(data_b[5]),
+	.F(\adder_subtractor_inst/result_d_7_6 )
+);
+defparam \adder_subtractor_inst/full_adder[7].u_full_adder/result_d_7_s3 .INIT=16'h1777;
+LUT4 \adder_subtractor_inst/full_adder[8].u_full_adder/result_d_8_s  (
+	.I0(\adder_subtractor_inst/result_d_7_3 ),
+	.I1(data_a[7]),
+	.I2(data_b[7]),
+	.I3(\adder_subtractor_inst/full_adder[8].u_full_adder/result_d_8_3 ),
+	.F(result[8])
+);
+defparam \adder_subtractor_inst/full_adder[8].u_full_adder/result_d_8_s .INIT=16'hD42B;
+LUT2 \adder_subtractor_inst/full_adder[8].u_full_adder/result_d_8_s0  (
+	.I0(data_a[8]),
+	.I1(data_b[8]),
+	.F(\adder_subtractor_inst/full_adder[8].u_full_adder/result_d_8_3 )
+);
+defparam \adder_subtractor_inst/full_adder[8].u_full_adder/result_d_8_s0 .INIT=4'h9;
+LUT3 \adder_subtractor_inst/full_adder[9].u_full_adder/result_d_9_s  (
+	.I0(\adder_subtractor_inst/result_d_9_3 ),
+	.I1(data_a[9]),
+	.I2(data_b[9]),
+	.F(result[9])
+);
+defparam \adder_subtractor_inst/full_adder[9].u_full_adder/result_d_9_s .INIT=8'h69;
+LUT4 \adder_subtractor_inst/full_adder[9].u_full_adder/result_d_9_s0  (
+	.I0(\adder_subtractor_inst/full_adder[9].u_full_adder/result_d_9_4 ),
+	.I1(\adder_subtractor_inst/result_d_3_3 ),
+	.I2(\adder_subtractor_inst/full_adder[9].u_full_adder/result_d_9_5 ),
+	.I3(\adder_subtractor_inst/full_adder[9].u_full_adder/result_d_9_6 ),
+	.F(\adder_subtractor_inst/result_d_9_3 )
+);
+defparam \adder_subtractor_inst/full_adder[9].u_full_adder/result_d_9_s0 .INIT=16'h0D00;
+LUT3 \adder_subtractor_inst/full_adder[9].u_full_adder/result_d_9_s1  (
+	.I0(\adder_subtractor_inst/result_d_5_4 ),
+	.I1(\adder_subtractor_inst/result_d_7_4 ),
+	.I2(\adder_subtractor_inst/full_adder[9].u_full_adder/result_d_9_7 ),
+	.F(\adder_subtractor_inst/full_adder[9].u_full_adder/result_d_9_4 )
+);
+defparam \adder_subtractor_inst/full_adder[9].u_full_adder/result_d_9_s1 .INIT=8'h80;
+LUT4 \adder_subtractor_inst/full_adder[9].u_full_adder/result_d_9_s2  (
+	.I0(\adder_subtractor_inst/result_d_5_5 ),
+	.I1(\adder_subtractor_inst/result_d_7_4 ),
+	.I2(\adder_subtractor_inst/result_d_7_6 ),
+	.I3(\adder_subtractor_inst/full_adder[9].u_full_adder/result_d_9_7 ),
+	.F(\adder_subtractor_inst/full_adder[9].u_full_adder/result_d_9_5 )
+);
+defparam \adder_subtractor_inst/full_adder[9].u_full_adder/result_d_9_s2 .INIT=16'h4F00;
+LUT4 \adder_subtractor_inst/full_adder[9].u_full_adder/result_d_9_s3  (
+	.I0(data_a[8]),
+	.I1(data_b[8]),
+	.I2(data_a[7]),
+	.I3(data_b[7]),
+	.F(\adder_subtractor_inst/full_adder[9].u_full_adder/result_d_9_6 )
+);
+defparam \adder_subtractor_inst/full_adder[9].u_full_adder/result_d_9_s3 .INIT=16'h1777;
+LUT4 \adder_subtractor_inst/full_adder[9].u_full_adder/result_d_9_s4  (
+	.I0(data_a[8]),
+	.I1(data_b[8]),
+	.I2(data_a[7]),
+	.I3(data_b[7]),
+	.F(\adder_subtractor_inst/full_adder[9].u_full_adder/result_d_9_7 )
+);
+defparam \adder_subtractor_inst/full_adder[9].u_full_adder/result_d_9_s4 .INIT=16'hEEE0;
+LUT4 \adder_subtractor_inst/full_adder[10].u_full_adder/result_d_10_s  (
+	.I0(\adder_subtractor_inst/result_d_9_3 ),
+	.I1(data_a[9]),
+	.I2(data_b[9]),
+	.I3(\adder_subtractor_inst/full_adder[10].u_full_adder/result_d_10_3 ),
+	.F(result[10])
+);
+defparam \adder_subtractor_inst/full_adder[10].u_full_adder/result_d_10_s .INIT=16'hD42B;
+LUT2 \adder_subtractor_inst/full_adder[10].u_full_adder/result_d_10_s0  (
+	.I0(data_a[10]),
+	.I1(data_b[10]),
+	.F(\adder_subtractor_inst/full_adder[10].u_full_adder/result_d_10_3 )
+);
+defparam \adder_subtractor_inst/full_adder[10].u_full_adder/result_d_10_s0 .INIT=4'h9;
+LUT4 \adder_subtractor_inst/full_adder[11].u_full_adder/result_d_11_s  (
+	.I0(\adder_subtractor_inst/result_d_9_3 ),
+	.I1(\adder_subtractor_inst/full_adder[11].u_full_adder/result_d_11_3 ),
+	.I2(\adder_subtractor_inst/full_adder[11].u_full_adder/result_d_11_4 ),
+	.I3(\adder_subtractor_inst/full_adder[11].u_full_adder/result_d_11_5 ),
+	.F(result[11])
+);
+defparam \adder_subtractor_inst/full_adder[11].u_full_adder/result_d_11_s .INIT=16'h4FB0;
+LUT3 \adder_subtractor_inst/full_adder[11].u_full_adder/result_d_12_s  (
+	.I0(\adder_subtractor_inst/result_d_9_3 ),
+	.I1(\adder_subtractor_inst/full_adder[11].u_full_adder/result_d_12_3 ),
+	.I2(\adder_subtractor_inst/full_adder[11].u_full_adder/result_d_12_4 ),
+	.F(result[12])
+);
+defparam \adder_subtractor_inst/full_adder[11].u_full_adder/result_d_12_s .INIT=8'hF4;
+LUT4 \adder_subtractor_inst/full_adder[11].u_full_adder/result_d_11_s0  (
+	.I0(data_a[10]),
+	.I1(data_b[10]),
+	.I2(data_a[9]),
+	.I3(data_b[9]),
+	.F(\adder_subtractor_inst/full_adder[11].u_full_adder/result_d_11_3 )
+);
+defparam \adder_subtractor_inst/full_adder[11].u_full_adder/result_d_11_s0 .INIT=16'hEEE0;
+LUT4 \adder_subtractor_inst/full_adder[11].u_full_adder/result_d_11_s1  (
+	.I0(data_a[10]),
+	.I1(data_b[10]),
+	.I2(data_a[9]),
+	.I3(data_b[9]),
+	.F(\adder_subtractor_inst/full_adder[11].u_full_adder/result_d_11_4 )
+);
+defparam \adder_subtractor_inst/full_adder[11].u_full_adder/result_d_11_s1 .INIT=16'h1777;
+LUT2 \adder_subtractor_inst/full_adder[11].u_full_adder/result_d_11_s2  (
+	.I0(data_a[11]),
+	.I1(data_b[11]),
+	.F(\adder_subtractor_inst/full_adder[11].u_full_adder/result_d_11_5 )
+);
+defparam \adder_subtractor_inst/full_adder[11].u_full_adder/result_d_11_s2 .INIT=4'h9;
+LUT3 \adder_subtractor_inst/full_adder[11].u_full_adder/result_d_12_s0  (
+	.I0(data_b[11]),
+	.I1(data_a[11]),
+	.I2(\adder_subtractor_inst/full_adder[11].u_full_adder/result_d_11_3 ),
+	.F(\adder_subtractor_inst/full_adder[11].u_full_adder/result_d_12_3 )
+);
+defparam \adder_subtractor_inst/full_adder[11].u_full_adder/result_d_12_s0 .INIT=8'hE0;
+LUT3 \adder_subtractor_inst/full_adder[11].u_full_adder/result_d_12_s1  (
+	.I0(\adder_subtractor_inst/full_adder[11].u_full_adder/result_d_11_4 ),
+	.I1(data_a[11]),
+	.I2(data_b[11]),
+	.F(\adder_subtractor_inst/full_adder[11].u_full_adder/result_d_12_4 )
+);
+defparam \adder_subtractor_inst/full_adder[11].u_full_adder/result_d_12_s1 .INIT=8'hD4;
+endmodule

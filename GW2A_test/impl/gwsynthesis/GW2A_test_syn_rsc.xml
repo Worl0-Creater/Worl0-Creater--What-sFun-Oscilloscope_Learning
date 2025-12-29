@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module name="top" Lut="1" T_Register="2151(0)" T_Alu="423(0)" T_Lut="2882(1)" T_MULT18X18="1(0)" T_Bsram="21(0)" T_Ssram="4(0)">
+ <SubModule name="pll_1"/>
+ <SubModule name="spi_slave_u" Register="577" Lut="374" T_Register="577(577)" T_Lut="374(374)"/>
+ <SubModule name="reg_decode_1" Lut="6" T_Register="338(0)" T_Lut="382(6)">
+  <SubModule name="bcd_8421_5" Register="94" Lut="103" T_Register="94(94)" T_Lut="103(103)"/>
+  <SubModule name="bcd_8421_4" Register="51" Lut="56" T_Register="51(51)" T_Lut="56(56)"/>
+  <SubModule name="bcd_8421_3" Register="51" Lut="56" T_Register="51(51)" T_Lut="56(56)"/>
+  <SubModule name="bcd_8421_2" Register="91" Lut="102" T_Register="91(91)" T_Lut="102(102)"/>
+  <SubModule name="bcd_8421_1" Register="51" Lut="59" T_Register="51(51)" T_Lut="59(59)"/>
+ </SubModule>
+ <SubModule name="AD9288_1" Register="16" Alu="14" Lut="2" T_Register="16(16)" T_Alu="14(14)" T_Lut="2(2)"/>
+ <SubModule name="Average_Filter_1" Register="64" Alu="60" T_Register="64(64)" T_Alu="60(60)"/>
+ <SubModule name="Average_Filter_2" Register="64" Alu="60" T_Register="64(64)" T_Alu="60(60)"/>
+ <SubModule name="data_handler_1" Register="178" Alu="45" Lut="363" Ssram="4" T_Register="339(178)" T_Alu="45(45)" T_Lut="549(363)" T_Bsram="16(0)" T_Ssram="4(4)">
+  <SubModule name="freq_measure_a" Register="161" Lut="170" T_Register="161(161)" T_Lut="170(170)"/>
+  <SubModule name="Gowin_SDPB_A" Lut="8" Bsram="8" T_Lut="8(8)" T_Bsram="8(8)"/>
+  <SubModule name="Gowin_SDPB_B" Lut="8" Bsram="8" T_Lut="8(8)" T_Bsram="8(8)"/>
+ </SubModule>
+ <SubModule name="LCD_1" Register="387" Alu="148" Lut="1329" MULT18X18="1" Bsram="4" T_Register="387(387)" T_Alu="148(148)" T_Lut="1329(1329)" T_MULT18X18="1(1)" T_Bsram="4(4)"/>
+ <SubModule name="DAC_1" Register="57" Alu="32" Lut="96" T_Register="366(57)" T_Alu="96(32)" T_Lut="245(96)" T_Bsram="1(0)">
+  <SubModule name="DDS_II_1" Register="309" Alu="64" Lut="149" Bsram="1" T_Register="309(309)" T_Alu="64(64)" T_Lut="149(149)" T_Bsram="1(1)"/>
+ </SubModule>
+</Module>

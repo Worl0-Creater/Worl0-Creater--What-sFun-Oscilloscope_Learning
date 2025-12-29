@@ -1,0 +1,147 @@
+GowinSynthesis start
+Running parser ...
+Analyzing Verilog file 'C:\Users\1\Downloads\GW2A_test\src\DAC.v'
+Analyzing Verilog file 'C:\Users\1\Downloads\GW2A_test\src\LCD.v'
+Analyzing Verilog file 'C:\Users\1\Downloads\GW2A_test\src\ad9288.v'
+Analyzing Verilog file 'C:\Users\1\Downloads\GW2A_test\src\bcd_8421.v'
+Analyzing Verilog file 'C:\Users\1\Downloads\GW2A_test\src\data_handler.v'
+Analyzing Verilog file 'C:\Users\1\Downloads\GW2A_test\src\dds_ii\dds_ii.v'
+Analyzing Verilog file 'C:\Users\1\Downloads\GW2A_test\src\filter.sv'
+Analyzing Verilog file 'C:\Users\1\Downloads\GW2A_test\src\freq_measure.v'
+Analyzing Verilog file 'C:\Users\1\Downloads\GW2A_test\src\gowin_rpll\gowin_rpll.v'
+Analyzing Verilog file 'C:\Users\1\Downloads\GW2A_test\src\gowin_sdpb\gowin_sdpb.v'
+Analyzing Verilog file 'C:\Users\1\Downloads\GW2A_test\src\reg_decode.v'
+Analyzing Verilog file 'C:\Users\1\Downloads\GW2A_test\src\spi.sv'
+Analyzing Verilog file 'C:\Users\1\Downloads\GW2A_test\src\top.v'
+Undeclared symbol 'acdc_ch1', assumed default net type 'wire'("C:\Users\1\Downloads\GW2A_test\src\top.v":183)
+Undeclared symbol 'acdc_ch2', assumed default net type 'wire'("C:\Users\1\Downloads\GW2A_test\src\top.v":184)
+Compiling module 'top'("C:\Users\1\Downloads\GW2A_test\src\top.v":1)
+Compiling module 'Gowin_rPLL'("C:\Users\1\Downloads\GW2A_test\src\gowin_rpll\gowin_rpll.v":10)
+Compiling module 'spi_slave'("C:\Users\1\Downloads\GW2A_test\src\spi.sv":1)
+WARN  (EX3791) : Expression size 6 truncated to fit in target size 5("C:\Users\1\Downloads\GW2A_test\src\spi.sv":79)
+WARN  (EX3791) : Expression size 6 truncated to fit in target size 5("C:\Users\1\Downloads\GW2A_test\src\spi.sv":101)
+WARN  (EX3791) : Expression size 6 truncated to fit in target size 5("C:\Users\1\Downloads\GW2A_test\src\spi.sv":120)
+WARN  (EX3073) : Port 'tho' remains unconnected for this instance("C:\Users\1\Downloads\GW2A_test\src\reg_decode.v":193)
+WARN  (EX3073) : Port 'tho' remains unconnected for this instance("C:\Users\1\Downloads\GW2A_test\src\reg_decode.v":207)
+WARN  (EX3073) : Port 'tho' remains unconnected for this instance("C:\Users\1\Downloads\GW2A_test\src\reg_decode.v":305)
+Compiling module 'reg_decode'("C:\Users\1\Downloads\GW2A_test\src\reg_decode.v":1)
+Compiling module 'bcd_8421'("C:\Users\1\Downloads\GW2A_test\src\bcd_8421.v":1)
+WARN  (EX3791) : Expression size 14 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\reg_decode.v":185)
+WARN  (EX3670) : Actual bit length 8 differs from formal bit length 32 for port 'data'("C:\Users\1\Downloads\GW2A_test\src\reg_decode.v":189)
+WARN  (EX3791) : Expression size 14 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\reg_decode.v":199)
+WARN  (EX3670) : Actual bit length 8 differs from formal bit length 32 for port 'data'("C:\Users\1\Downloads\GW2A_test\src\reg_decode.v":203)
+WARN  (EX3670) : Actual bit length 9 differs from formal bit length 32 for port 'data'("C:\Users\1\Downloads\GW2A_test\src\reg_decode.v":301)
+Compiling module 'AD9288'("C:\Users\1\Downloads\GW2A_test\src\ad9288.v":3)
+Compiling module 'Average_Filter'("C:\Users\1\Downloads\GW2A_test\src\filter.sv":1)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\filter.sv":49)
+Compiling module 'data_handler'("C:\Users\1\Downloads\GW2A_test\src\data_handler.v":1)
+Compiling module 'freq_measure'("C:\Users\1\Downloads\GW2A_test\src\freq_measure.v":1)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\freq_measure.v":15)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\freq_measure.v":16)
+WARN  (EX3791) : Expression size 5 truncated to fit in target size 4("C:\Users\1\Downloads\GW2A_test\src\data_handler.v":232)
+WARN  (EX3791) : Expression size 15 truncated to fit in target size 14("C:\Users\1\Downloads\GW2A_test\src\data_handler.v":239)
+WARN  (EX3791) : Expression size 15 truncated to fit in target size 14("C:\Users\1\Downloads\GW2A_test\src\data_handler.v":253)
+WARN  (EX3791) : Expression size 5 truncated to fit in target size 4("C:\Users\1\Downloads\GW2A_test\src\data_handler.v":255)
+WARN  (EX3791) : Expression size 5 truncated to fit in target size 4("C:\Users\1\Downloads\GW2A_test\src\data_handler.v":274)
+WARN  (EX3791) : Expression size 15 truncated to fit in target size 14("C:\Users\1\Downloads\GW2A_test\src\data_handler.v":282)
+WARN  (EX3791) : Expression size 5 truncated to fit in target size 4("C:\Users\1\Downloads\GW2A_test\src\data_handler.v":293)
+WARN  (EX3791) : Expression size 5 truncated to fit in target size 4("C:\Users\1\Downloads\GW2A_test\src\data_handler.v":297)
+WARN  (EX3791) : Expression size 5 truncated to fit in target size 4("C:\Users\1\Downloads\GW2A_test\src\data_handler.v":306)
+Compiling module 'Gowin_SDPB'("C:\Users\1\Downloads\GW2A_test\src\gowin_sdpb\gowin_sdpb.v":10)
+WARN  (EX3670) : Actual bit length 15 differs from formal bit length 14 for port 'ada'("C:\Users\1\Downloads\GW2A_test\src\data_handler.v":332)
+WARN  (EX3670) : Actual bit length 15 differs from formal bit length 14 for port 'adb'("C:\Users\1\Downloads\GW2A_test\src\data_handler.v":334)
+WARN  (EX3670) : Actual bit length 15 differs from formal bit length 14 for port 'ada'("C:\Users\1\Downloads\GW2A_test\src\data_handler.v":347)
+WARN  (EX3670) : Actual bit length 15 differs from formal bit length 14 for port 'adb'("C:\Users\1\Downloads\GW2A_test\src\data_handler.v":349)
+Compiling module 'LCD'("C:\Users\1\Downloads\GW2A_test\src\LCD.v":2)
+WARN  (EX3791) : Expression size 16 truncated to fit in target size 14("C:\Users\1\Downloads\GW2A_test\src\LCD.v":141)
+WARN  (EX3791) : Expression size 24 truncated to fit in target size 16("C:\Users\1\Downloads\GW2A_test\src\LCD.v":149)
+WARN  (EX3791) : Expression size 16 truncated to fit in target size 14("C:\Users\1\Downloads\GW2A_test\src\LCD.v":150)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\LCD.v":173)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\LCD.v":174)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\LCD.v":175)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\LCD.v":176)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\LCD.v":177)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\LCD.v":178)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\LCD.v":179)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\LCD.v":180)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\LCD.v":181)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\LCD.v":182)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\LCD.v":183)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\LCD.v":184)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\LCD.v":185)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\LCD.v":186)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\LCD.v":187)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\LCD.v":188)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\LCD.v":189)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\LCD.v":190)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\LCD.v":191)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\LCD.v":192)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\LCD.v":193)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\LCD.v":194)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\LCD.v":195)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\LCD.v":196)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\LCD.v":210)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\LCD.v":212)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\LCD.v":213)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\LCD.v":214)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\LCD.v":215)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\LCD.v":216)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\LCD.v":217)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\LCD.v":218)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\LCD.v":219)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\LCD.v":252)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\LCD.v":253)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\LCD.v":254)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\LCD.v":255)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\LCD.v":256)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\LCD.v":257)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\LCD.v":258)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\LCD.v":259)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\LCD.v":260)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\LCD.v":261)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\LCD.v":262)
+WARN  (EX3791) : Expression size 17 truncated to fit in target size 16("C:\Users\1\Downloads\GW2A_test\src\LCD.v":308)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\LCD.v":325)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\LCD.v":326)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\LCD.v":331)
+WARN  (EX3791) : Expression size 17 truncated to fit in target size 16("C:\Users\1\Downloads\GW2A_test\src\LCD.v":334)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\LCD.v":351)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\LCD.v":352)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\LCD.v":353)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\LCD.v":354)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\LCD.v":355)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\LCD.v":356)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\LCD.v":357)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\LCD.v":358)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\LCD.v":359)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\LCD.v":360)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\LCD.v":361)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\1\Downloads\GW2A_test\src\LCD.v":362)
+WARN  (EX1998) : Net 'mem[127][127]' does not have a driver("C:\Users\1\Downloads\GW2A_test\src\LCD.v":105)
+WARN  (EX3670) : Actual bit length 15 differs from formal bit length 14 for port 'ram_addr'("C:\Users\1\Downloads\GW2A_test\src\top.v":253)
+Compiling module 'DAC'("C:\Users\1\Downloads\GW2A_test\src\DAC.v":1)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 10("C:\Users\1\Downloads\GW2A_test\src\DAC.v":70)
+Compiling module 'DDS_II_Top'("C:\Users\1\Downloads\GW2A_test\src\dds_ii\dds_ii.v":1787)
+Compiling module '**'("C:\Users\1\Downloads\GW2A_test\src\dds_ii\dds_ii.v":1786)
+WARN  (EX3791) : Expression size 12 truncated to fit in target size 10("C:\Users\1\Downloads\GW2A_test\src\DAC.v":103)
+WARN  (EX3791) : Expression size 12 truncated to fit in target size 10("C:\Users\1\Downloads\GW2A_test\src\DAC.v":105)
+NOTE  (EX0101) : Current top module is "top"
+[5%] Running netlist conversion ...
+Running device independent optimization ...
+[10%] Optimizing Phase 0 completed
+[15%] Optimizing Phase 1 completed
+[25%] Optimizing Phase 2 completed
+Running inference ...
+[30%] Inferring Phase 0 completed
+[40%] Inferring Phase 1 completed
+[50%] Inferring Phase 2 completed
+[55%] Inferring Phase 3 completed
+Running technical mapping ...
+[60%] Tech-Mapping Phase 0 completed
+[65%] Tech-Mapping Phase 1 completed
+[75%] Tech-Mapping Phase 2 completed
+[80%] Tech-Mapping Phase 3 completed
+[90%] Tech-Mapping Phase 4 completed
+[95%] Generate netlist file "C:\Users\1\Downloads\GW2A_test\impl\gwsynthesis\GW2A_test.vg" completed
+[100%] Generate report file "C:\Users\1\Downloads\GW2A_test\impl\gwsynthesis\GW2A_test_syn.rpt.html" completed
+GowinSynthesis finish

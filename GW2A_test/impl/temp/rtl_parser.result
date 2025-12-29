@@ -1,0 +1,172 @@
+[
+ {
+  "InstFile" : "C:/Users/1/Downloads/GW2A_test/src/top.v",
+  "InstLine" : 1,
+  "InstName" : "top",
+  "ModuleFile" : "C:/Users/1/Downloads/GW2A_test/src/top.v",
+  "ModuleLine" : 1,
+  "ModuleName" : "top",
+  "SubInsts" : [
+   {
+    "InstFile" : "C:/Users/1/Downloads/GW2A_test/src/top.v",
+    "InstLine" : 106,
+    "InstName" : "pll_1",
+    "ModuleFile" : "C:/Users/1/Downloads/GW2A_test/src/gowin_rpll/gowin_rpll.v",
+    "ModuleLine" : 10,
+    "ModuleName" : "Gowin_rPLL"
+   },
+   {
+    "InstFile" : "C:/Users/1/Downloads/GW2A_test/src/top.v",
+    "InstLine" : 113,
+    "InstName" : "spi_slave_u",
+    "ModuleFile" : "C:/Users/1/Downloads/GW2A_test/src/spi.sv",
+    "ModuleLine" : 1,
+    "ModuleName" : "spi_slave"
+   },
+   {
+    "InstFile" : "C:/Users/1/Downloads/GW2A_test/src/top.v",
+    "InstLine" : 125,
+    "InstName" : "reg_decode_1",
+    "ModuleFile" : "C:/Users/1/Downloads/GW2A_test/src/reg_decode.v",
+    "ModuleLine" : 1,
+    "ModuleName" : "reg_decode",
+    "SubInsts" : [
+     {
+      "InstFile" : "C:/Users/1/Downloads/GW2A_test/src/reg_decode.v",
+      "InstLine" : 129,
+      "InstName" : "bcd_8421_5",
+      "ModuleFile" : "C:/Users/1/Downloads/GW2A_test/src/bcd_8421.v",
+      "ModuleLine" : 1,
+      "ModuleName" : "bcd_8421"
+     },
+     {
+      "InstFile" : "C:/Users/1/Downloads/GW2A_test/src/reg_decode.v",
+      "InstLine" : 186,
+      "InstName" : "bcd_8421_4",
+      "ModuleFile" : "C:/Users/1/Downloads/GW2A_test/src/bcd_8421.v",
+      "ModuleLine" : 1,
+      "ModuleName" : "bcd_8421"
+     },
+     {
+      "InstFile" : "C:/Users/1/Downloads/GW2A_test/src/reg_decode.v",
+      "InstLine" : 200,
+      "InstName" : "bcd_8421_3",
+      "ModuleFile" : "C:/Users/1/Downloads/GW2A_test/src/bcd_8421.v",
+      "ModuleLine" : 1,
+      "ModuleName" : "bcd_8421"
+     },
+     {
+      "InstFile" : "C:/Users/1/Downloads/GW2A_test/src/reg_decode.v",
+      "InstLine" : 253,
+      "InstName" : "bcd_8421_2",
+      "ModuleFile" : "C:/Users/1/Downloads/GW2A_test/src/bcd_8421.v",
+      "ModuleLine" : 1,
+      "ModuleName" : "bcd_8421"
+     },
+     {
+      "InstFile" : "C:/Users/1/Downloads/GW2A_test/src/reg_decode.v",
+      "InstLine" : 298,
+      "InstName" : "bcd_8421_1",
+      "ModuleFile" : "C:/Users/1/Downloads/GW2A_test/src/bcd_8421.v",
+      "ModuleLine" : 1,
+      "ModuleName" : "bcd_8421"
+     }
+    ]
+   },
+   {
+    "InstFile" : "C:/Users/1/Downloads/GW2A_test/src/top.v",
+    "InstLine" : 187,
+    "InstName" : "AD9288_1",
+    "ModuleFile" : "C:/Users/1/Downloads/GW2A_test/src/ad9288.v",
+    "ModuleLine" : 3,
+    "ModuleName" : "AD9288"
+   },
+   {
+    "InstFile" : "C:/Users/1/Downloads/GW2A_test/src/top.v",
+    "InstLine" : 198,
+    "InstName" : "Average_Filter_1",
+    "ModuleFile" : "C:/Users/1/Downloads/GW2A_test/src/filter.sv",
+    "ModuleLine" : 1,
+    "ModuleName" : "Average_Filter"
+   },
+   {
+    "InstFile" : "C:/Users/1/Downloads/GW2A_test/src/top.v",
+    "InstLine" : 205,
+    "InstName" : "Average_Filter_2",
+    "ModuleFile" : "C:/Users/1/Downloads/GW2A_test/src/filter.sv",
+    "ModuleLine" : 1,
+    "ModuleName" : "Average_Filter"
+   },
+   {
+    "InstFile" : "C:/Users/1/Downloads/GW2A_test/src/top.v",
+    "InstLine" : 213,
+    "InstName" : "data_handler_1",
+    "ModuleFile" : "C:/Users/1/Downloads/GW2A_test/src/data_handler.v",
+    "ModuleLine" : 1,
+    "ModuleName" : "data_handler",
+    "SubInsts" : [
+     {
+      "InstFile" : "C:/Users/1/Downloads/GW2A_test/src/data_handler.v",
+      "InstLine" : 180,
+      "InstName" : "freq_measure_a",
+      "ModuleFile" : "C:/Users/1/Downloads/GW2A_test/src/freq_measure.v",
+      "ModuleLine" : 1,
+      "ModuleName" : "freq_measure"
+     },
+     {
+      "InstFile" : "C:/Users/1/Downloads/GW2A_test/src/data_handler.v",
+      "InstLine" : 323,
+      "InstName" : "Gowin_SDPB_A",
+      "ModuleFile" : "C:/Users/1/Downloads/GW2A_test/src/gowin_sdpb/gowin_sdpb.v",
+      "ModuleLine" : 10,
+      "ModuleName" : "Gowin_SDPB"
+     },
+     {
+      "InstFile" : "C:/Users/1/Downloads/GW2A_test/src/data_handler.v",
+      "InstLine" : 338,
+      "InstName" : "Gowin_SDPB_B",
+      "ModuleFile" : "C:/Users/1/Downloads/GW2A_test/src/gowin_sdpb/gowin_sdpb.v",
+      "ModuleLine" : 10,
+      "ModuleName" : "Gowin_SDPB"
+     }
+    ]
+   },
+   {
+    "InstFile" : "C:/Users/1/Downloads/GW2A_test/src/top.v",
+    "InstLine" : 241,
+    "InstName" : "LCD_1",
+    "ModuleFile" : "C:/Users/1/Downloads/GW2A_test/src/LCD.v",
+    "ModuleLine" : 2,
+    "ModuleName" : "LCD"
+   },
+   {
+    "InstFile" : "C:/Users/1/Downloads/GW2A_test/src/top.v",
+    "InstLine" : 297,
+    "InstName" : "DAC_1",
+    "ModuleFile" : "C:/Users/1/Downloads/GW2A_test/src/DAC.v",
+    "ModuleLine" : 1,
+    "ModuleName" : "DAC",
+    "SubInsts" : [
+     {
+      "InstFile" : "C:/Users/1/Downloads/GW2A_test/src/DAC.v",
+      "InstLine" : 74,
+      "InstName" : "DDS_II_1",
+      "ModuleFile" : "C:/Users/1/Downloads/GW2A_test/src/dds_ii/dds_ii.v",
+      "ModuleLine" : 1787,
+      "ModuleName" : "DDS_II_Top",
+      "SubInsts" : [
+       {
+        "InstFile" : "C:/Users/1/Downloads/GW2A_test/src/dds_ii/dds_ii.v",
+        "InstLine" : 1806,
+        "InstName" : "u_dds_compiler_core",
+        "ModuleFile" : "C:/Users/1/Downloads/GW2A_test/src/dds_ii/dds_ii.v",
+        "ModuleLine" : 10,
+        "ModuleName" : "~dds_ii_core.DDS_II_Top"
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+]

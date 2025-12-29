@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE gowin-synthesis-project>
+<Project>
+    <Version>beta</Version>
+    <Device id="GW2A-18C" package="PBGA256" speed="8" partNumber="GW2A-LV18PG256C8/I7"/>
+    <FileList>
+        <File path="C:/Gowin/Gowin_V1.9.11.02_x64/IDE/ipcore/Adder_Subtractor/data/adder_subtractor_wrap.v" type="verilog"/>
+        <File path="C:/Gowin/Gowin_V1.9.11.02_x64/IDE/ipcore/Adder_Subtractor/data/adder_subtractor.v" type="verilog"/>
+        <File path="C:/Gowin/Gowin_V1.9.11.02_x64/IDE/ipcore/Adder_Subtractor/data/static_macro_define.v" type="verilog"/>
+    </FileList>
+    <OptionList>
+        <Option type="disable_insert_pad" value="1"/>
+        <Option type="include_path" value="C:/Gowin/Gowin_V1.9.11.02_x64/IDE/ipcore/Adder_Subtractor/data"/>
+        <Option type="include_path" value="C:/Users/1/Downloads/GW2A_test/src/adder_subtractor/temp/Adder_Subtractor"/>
+        <Option type="output_file" value="adder_subtractor.vg"/>
+        <Option type="output_template" value="adder_subtractor_tmp.v"/>
+        <Option type="ram_balance" value="1"/>
+        <Option type="ram_rw_check" value="1"/>
+        <Option type="vcc" value="1.0"/>
+        <Option type="vccx" value="3.3"/>
+        <Option type="verilog_language" value="sysv-2017"/>
+    </OptionList>
+</Project>

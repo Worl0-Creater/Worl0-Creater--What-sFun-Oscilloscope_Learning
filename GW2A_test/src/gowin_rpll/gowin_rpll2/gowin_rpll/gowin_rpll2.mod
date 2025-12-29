@@ -1,0 +1,32 @@
+-series GW2A
+-device GW2A-18
+-device_version C
+-package PBGA256
+-part_number GW2A-LV18PG256C8/I7
+
+
+-mod_name Gowin_rPLL2
+-file_name gowin_rpll2
+-path H:/MyDocument/project/gowin/GW2A_test/GW2A_test/src/gowin_rpll/gowin_rpll2/gowin_rpll/
+-type PLL
+-rPll true
+-file_type vlg
+-dev_type GW2A-18C
+-dyn_idiv_sel false
+-idiv_sel 1
+-dyn_fbdiv_sel false
+-fbdiv_sel 4
+-dyn_odiv_sel false
+-odiv_sel 4
+-dyn_da_en false
+-rst_sig true
+-rst_sig_p false
+-fclkin 50
+-clkfb_sel 0
+-en_lock false
+-clkout_bypass false
+-en_clkoutp false
+-clkoutp_bypass false
+-en_clkoutd false
+-clkoutd_bypass false
+-en_clkoutd3 false

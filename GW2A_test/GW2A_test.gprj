@@ -1,0 +1,26 @@
+<?xml version="1" encoding="UTF-8"?>
+<!DOCTYPE gowin-fpga-project>
+<Project>
+    <Template>FPGA</Template>
+    <Version>5</Version>
+    <Device name="GW2A-18C" pn="GW2A-LV18PG256C8/I7">gw2a18c-011</Device>
+    <FileList>
+        <File path="src/DAC.v" type="file.verilog" enable="1"/>
+        <File path="src/LCD.v" type="file.verilog" enable="1"/>
+        <File path="src/ad9288.v" type="file.verilog" enable="1"/>
+        <File path="src/adder_subtractor/adder_subtractor.v" type="file.verilog" enable="0"/>
+        <File path="src/bcd_8421.v" type="file.verilog" enable="1"/>
+        <File path="src/breath.v" type="file.verilog" enable="0"/>
+        <File path="src/data_handler.v" type="file.verilog" enable="1"/>
+        <File path="src/dds_ii/dds_ii.v" type="file.verilog" enable="1"/>
+        <File path="src/filter.sv" type="file.verilog" enable="1"/>
+        <File path="src/freq_measure.v" type="file.verilog" enable="1"/>
+        <File path="src/gowin_rpll/gowin_rpll.v" type="file.verilog" enable="1"/>
+        <File path="src/gowin_sdpb/gowin_sdpb.v" type="file.verilog" enable="1"/>
+        <File path="src/reg_decode.v" type="file.verilog" enable="1"/>
+        <File path="src/spi.sv" type="file.verilog" enable="1"/>
+        <File path="src/top.v" type="file.verilog" enable="1"/>
+        <File path="src/GW2A_test.cst" type="file.cst" enable="1"/>
+        <File path="src/GW2A_test.sdc" type="file.sdc" enable="1"/>
+    </FileList>
+</Project>

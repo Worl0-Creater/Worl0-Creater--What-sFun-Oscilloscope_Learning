@@ -1,3 +1,9 @@
+//------------------------------------------------------------------------------
+// data_handler
+//  - AD9288 双通道数据流降采样、触发判定与缓存。
+//  - 负责写入双端口 RAM、与 LCD 时钟域握手 display_en/done。
+//  - 包含自动触发定时、波形测频、采集状态机。
+//------------------------------------------------------------------------------
 module data_handler(
     input clk,
 	input clkb,
@@ -49,7 +55,7 @@ always @(posedge clk or negedge rst_n) begin
     end
 end
 
-// 更新 deci_rate
+// 更新 deci_rate：根据时基选择映射分频比
 always @(posedge clk or negedge rst_n) begin
     if (!rst_n) begin
         deci_rate <= 32'd1; // 默认值为 1 分频
@@ -196,29 +202,11 @@ freq_measure freq_measure_a (
 //assign measure_freq = ch?freq_b:freq_a;
 
 /***************************RAM********************************/
-parameter RAM_DEPTH = 16384;//RAM容量(字节)
-
-reg write_enable;
-reg [7:0] write_data_a;
-reg [7:0] write_data_b;
-reg [14:0] write_addr; // 写地址
-reg [30:0] count_delay; //用于延时
-reg [13:0] ad_cnt; //数量计数
-reg [3:0] state;//状态机
-
-reg trig_ok;
-reg pause_reg;
-always@(posedge clk or negedge rst_n)begin
-	if(!rst_n)begin
-		stop<=0;
-		pause_reg<=0;
-	end else begin
-		pause_reg<=pause;
-		if(trig_ok)stop<=0;//单次触发后自动暂停
-		else if(pause_reg!=pause) stop<=!stop;
-	end
-end
-
+// 采集/写入状态机：
+//  - 将当前选通道数据写入双口 RAM（write_data_a/write_data_b、write_addr、write_enable）。
+//  - 通过 ad_cnt/count_delay 控制采样点数与写入节奏。
+//  - 使用 state 实现多状态采集流程，trig_ok 标记触发满足，pause_reg/stop 实现暂停/停止控制。
+//  - 采集完成后通过 display_en 与显示模块进行握手，由 display_done 返回。
 always@(posedge clk or negedge rst_n)begin
 	if(!rst_n)begin
 		state<=0;
@@ -289,13 +277,13 @@ always@(posedge clk or negedge rst_n)begin
 				end
 		  	end
 			4:begin
-				display_en<=1;
+				display_en<=1;           // 请求 LCD 启动刷新
 			 	state<=state+1;
 			end
 			5:begin
 				if(display_done_sync) begin
 					state<=state+1;
-					display_en<=0;
+					display_en<=0;       // LCD 完成显示，撤销请求
 				end else begin
 					state<=state;
 					display_en<=1;
@@ -351,8 +339,7 @@ Gowin_SDPB Gowin_SDPB_B (
 
 
 /************************** 跨时钟域同步 ***************************/
-
-// 同步 display_done 到 clk 域
+// display_done → data_handler 时钟域
 reg display_done_sync_1, display_done_sync_2;
 
 always @(posedge clk or negedge rst_n) begin

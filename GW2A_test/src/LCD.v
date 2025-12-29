@@ -1,4 +1,9 @@
-
+//------------------------------------------------------------------------------
+// LCD
+//  - SPI 显示控制：初始化、刷屏、字符/波形绘制等。
+//  - display_en/display_done 在不同时钟域间同步，确保数据安全。
+//  - 状态机 MAIN/INIT/SCAN/CHAR/POINT/WRITE/DELAY 控制 8080 时序输出。
+//------------------------------------------------------------------------------
 module LCD 
 (
     input				clk,		
@@ -56,7 +61,7 @@ module LCD
 	input wire [15:0] object
 );
 
-// 跨时钟域同步信号
+// 跨时钟域同步信号：display_en → LCD 时钟域
 reg display_en_sync_1;  // 第一级同步寄存器
 reg display_en_sync_2;  // 第二级同步寄存器
 wire display_en_sync = display_en_sync_2;// 同步后的信号
@@ -169,7 +174,7 @@ always@(posedge clk or negedge rst_n) begin
 					state <= MAIN; state_back <= MAIN;
 				end
 			MAIN:begin
-					case(cnt_main)	//MAIN状态
+					case(cnt_main)	// MAIN：统一调度初始化/刷屏/显示信息
 						8'd0: begin state<=INIT; cnt_main<=cnt_main+1; display_done<=0; end//初始化
 						8'd1: begin y_s<=(y_offset+0);y_e<=(y_offset+320); x_s<=(x_offset+0);x_e<=(x_offset+480); color_b<=BLACK; state<=CLEAR; cnt_main<=cnt_main+1; display_done<=0; end	//清屏
 						8'd2: begin y_s<=(y_offset+26); x_s<=(x_offset+402); char_num<=8; char<="X1 X2 dX"; color_t<=WHITE; color_b<=BLACK; state<=CHAR; cnt_main<=cnt_main+1; end
@@ -221,7 +226,7 @@ always@(posedge clk or negedge rst_n) begin
 						default: state <= IDLE;
 					endcase
 				end
-			INIT:begin	//初始化状态
+			INIT:begin	// INIT：发送 ST7735 初始化指令序列
 					if(cnt_init == 3'd4) begin
 						if(cnt_init_add == INIT_DEPTH) cnt_init <= 0;
 						else    cnt_init <= cnt_init;
@@ -247,7 +252,7 @@ always@(posedge clk or negedge rst_n) begin
 						default: state <= IDLE;
 					endcase
 				end
-			CLEAR:begin	//刷屏状态，从RAM中读取数据刷屏
+			CLEAR:begin	// CLEAR：整屏背景填充
 					case(cnt_scan)
 						8'd0:	begin data_reg <= {1'b0,8'h0,8'h2a};num_delay <= DEFAULT_DELAY;state <= WRITE; state_back <= CLEAR;cnt_scan<=cnt_scan+1;end
 						8'd1:	begin data_reg <= {1'b1,8'h0,x_s[15:8]};num_delay <= DEFAULT_DELAY;state <= WRITE; state_back <= CLEAR;cnt_scan<=cnt_scan+1;end
@@ -276,7 +281,7 @@ always@(posedge clk or negedge rst_n) begin
 						default: state <= IDLE;
 					endcase
 			end
-            SCAN:begin
+            SCAN:begin   // SCAN：读取 RAM 波形数据并绘制
                 case(cnt_scan)
                     5'd0: begin ram_addr<=trig_pos_minus_step;; cnt_scan <= cnt_scan + 1'b1; end // 使用预计算地址
                     5'd1: begin ram_en <= HIGH; cnt_scan <= cnt_scan + 1'b1;end	
@@ -320,7 +325,7 @@ always@(posedge clk or negedge rst_n) begin
                     default: state <= IDLE;
                 endcase
             end
-            CHAR: begin  // 字符显示状态
+            CHAR: begin  // CHAR：字符点阵渲染
                 case(cnt_scan)
                     5'd0: begin char_num <= char_num - 1'b1;  cnt_scan <= cnt_scan + 1; end
                     5'd1: begin char_data <= mem[char[(char_num*8)+:8]];   cnt_scan <= cnt_scan + 1; end
@@ -346,7 +351,7 @@ always@(posedge clk or negedge rst_n) begin
                    default: state <= IDLE;
                 endcase
             end
-            POINT:begin //画一个点
+            POINT:begin // POINT：单像素绘制（8080 写序列）
                case(cnt_point)
                     5'd0:	begin data_reg <= {1'b0,8'h0,8'h2a};num_delay <= DEFAULT_DELAY;state <= WRITE; state_back <= POINT;cnt_point<=cnt_point+1;end
                     5'd1:	begin data_reg <= {1'b1,8'h0,x[15:8]};num_delay <= DEFAULT_DELAY;state <= WRITE; state_back <= POINT;cnt_point<=cnt_point+1;end
@@ -364,7 +369,7 @@ always@(posedge clk or negedge rst_n) begin
 					default: state <= IDLE;
 				endcase
             end
-			WRITE:begin	//WRITE状态，将数据按照8080时序发送给屏幕
+			WRITE:begin	// WRITE：8080 时序写一个命令/数据
 					if(cnt_write == 8'd5) cnt_write <= 1'b0;
 					else cnt_write <= cnt_write + 1'b1;
 					case(cnt_write)
@@ -377,7 +382,7 @@ always@(posedge clk or negedge rst_n) begin
 						default: state <= IDLE;
 					endcase
 			end
-			DELAY:begin	//延时状态
+			DELAY:begin	// DELAY：写入后的固定等待
 					if(cnt_delay == num_delay) begin
 						cnt_delay <= 32'd0;
 						state <= state_back; 
@@ -553,6 +558,7 @@ assign mem[102]={8'h00,8'h00,8'h00,8'h00,8'h0C,8'h12,8'h10,8'h7C,8'h10,8'h10,8'h
 assign mem[103]={8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h3E,8'h44,8'h44,8'h38,8'h40,8'h3C,8'h42,8'h42,8'h3C};//"g",103
 assign mem[104]={8'h00,8'h00,8'h00,8'h00,8'hC0,8'h40,8'h40,8'h5C,8'h62,8'h42,8'h42,8'h42,8'h42,8'hE7,8'h00,8'h00};//"h",104
 assign mem[105]={8'h00,8'h00,8'h00,8'h30,8'h30,8'h00,8'h00,8'h70,8'h10,8'h10,8'h10,8'h10,8'h10,8'h7C,8'h00,8'h00};//"i",105
+
 assign mem[106]={8'h00,8'h00,8'h00,8'h0C,8'h0C,8'h00,8'h00,8'h1C,8'h04,8'h04,8'h04,8'h04,8'h04,8'h04,8'h44,8'h78};//"j",106
 assign mem[107]={8'h00,8'h00,8'h00,8'h00,8'hC0,8'h40,8'h40,8'h4E,8'h48,8'h50,8'h70,8'h48,8'h44,8'hEE,8'h00,8'h00};//"k",107
 assign mem[108]={8'h00,8'h00,8'h00,8'h10,8'h70,8'h10,8'h10,8'h10,8'h10,8'h10,8'h10,8'h10,8'h10,8'h7C,8'h00,8'h00};//"l",108
@@ -577,6 +583,4 @@ assign mem[126]={8'h20,8'h5A,8'h04,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h
 
 
 
-
- 
 endmodule

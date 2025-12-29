@@ -1,12 +1,4 @@
-# -【What'sFun】 Oscilloscope Learning
-MCU (GD32F303)  ←─ SPI ─→  FPGA (GW2A)
-                           ├─ 双通道ADC采集
-                           ├─ 触发与存储
-                           ├─ LCD显示控制
-                           └─ DAC波形输出
-
-                           二、核心模块层次
-                           ====
+# 【What'sFun】 Oscilloscope Learning
 
 1. 顶层模块 (top.v)
 时钟管理: PLL生成100MHz系统时钟
@@ -77,3 +69,9 @@ data_handler ↔ RAM: 写端口(采集)+读端口(显示)
 data_handler → LCD: display_en握手+trig_pos触发点
 SPI → regs → 各模块: 配置总线
 reg_decode → LCD: 预格式化文本缓冲区
+
+## LogicPi FPGA 数字示波器
+
+- **目标**：基于 GW2A 器件实现双通道采集、LCD 可视化与 DDS 输出的教学示波平台。  
+- **结构**：顶层 `top.v` 汇聚时钟、SPI 配置、采集链、显示与 DAC Five 个子系统。  
+- **提示**：更多细节可在 `GW2A_test\src` 目录查看带注释的 Verilog 模块。

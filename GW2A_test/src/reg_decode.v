@@ -1,3 +1,8 @@
+//------------------------------------------------------------------------------
+// reg_decode
+//  - 将 SPI 写入的寄存器阵列 regs[] 解码为核心控制信号与 LCD 显示字符串。
+//  - 每个寄存器下标固定对应一组前端控件/数值，参见各段的“寄存器映射”注释。
+//------------------------------------------------------------------------------
 module reg_decode(
     input clk,
     input rst_n,
@@ -272,40 +277,41 @@ assign dis_ch_buff = ch?"ACTIVE:CH2":"ACTIVE:CH1";
 /****运行/停止****/
 assign pause = regs[1][4];
 assign dis_stop_buff = !stop?"STOP":"RUN ";
+    //------------------------------------------------------------------------------
+    // 触发通道设置
+    //  - regs[1][3] : 触发通道选择位。
+    //  - regs[0][0] : AC/DC 耦合选项。
+    //  - regs[1][2] : 触发边沿（上升/下降）。
+    //  - regs[1][1:0] : 触发模式。
+    //------------------------------------------------------------------------------
+	assign trig_ch = regs[1][3];
+	assign dis_trig_ch_buff = trig_ch?"CH2":"CH1";
 
-/****触发通道****/
-assign trig_ch = regs[1][3];
-assign dis_trig_ch_buff = trig_ch?"CH2":"CH1";
+	/****耦合方式****/
+	assign acdc = regs[0][0];
+	assign dis_acdc_buff = acdc?"AC":"DC";
 
-/****耦合方式****/
-assign acdc = regs[0][0];
-assign dis_acdc_buff = acdc?"AC":"DC";
+	/****触发边沿****/
+	assign trig_edge = regs[1][2];
+	assign dis_trig_edge_buff = trig_edge?"NEG":"POS";
 
-/****触发边沿****/
-assign trig_edge = regs[1][2];
-assign dis_trig_edge_buff = trig_edge?"NEG":"POS";
+	/****触发模式****/
+	assign trig_mode = regs[1][1:0];
+	assign dis_trig_mode_buff = (trig_mode==2'b0)?"AUTO  ":((trig_mode==2'b01)?"NORMAL":"SINGLE");
 
-/****触发模式****/
-assign trig_mode = regs[1][1:0];
-assign dis_trig_mode_buff = (trig_mode==2'b0)?"AUTO  ":((trig_mode==2'b01)?"NORMAL":"SINGLE");
-
-/****触发电平****/
-assign trig_level = regs[6][7:0];
-wire [3:0] trig_level_unit;
-wire [3:0] trig_level_ten;
-wire [3:0] trig_level_hun;
-wire [8:0] trig_level_1=trig_level>>2;
-bcd_8421 bcd_8421_1(
-	.sys_clk(clk),   
-    .sys_rst_n(rst_n),   
-    .data(trig_level_1),   
-    .unit(trig_level_unit),  
-    .ten(trig_level_ten),  
-    .hun(trig_level_hun)    
-);
-assign dis_trig_level_buff = {4'd0,trig_level_hun,4'd0,trig_level_ten,4'd0,trig_level_unit};
-
-
-
-
+	/****触发电平****/
+	assign trig_level = regs[6][7:0];
+	wire [3:0] trig_level_unit;
+	wire [3:0] trig_level_ten;
+	wire [3:0] trig_level_hun;
+	wire [8:0] trig_level_1=trig_level>>2;
+	bcd_8421 bcd_8421_1(
+		.sys_clk(clk),   
+	    .sys_rst_n(rst_n),   
+	    .data(trig_level_1),   
+	    .unit(trig_level_unit),  
+	    .ten(trig_level_ten),  
+	    .hun(trig_level_hun)    
+	);
+	assign dis_trig_level_buff = {4'd0,trig_level_hun,4'd0,trig_level_ten,4'd0,trig_level_unit};
 endmodule
